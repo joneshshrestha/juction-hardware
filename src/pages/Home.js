@@ -12,6 +12,7 @@ import {
   MapPin,
   Clock
 } from 'lucide-react';
+import Carousel from '../components/Carousel';
 import './Home.css';
 
 const Home = () => {
@@ -56,50 +57,140 @@ const Home = () => {
       category: "Premium Interior",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       price: "₹4,500"
+    },
+    {
+      name: "Asian Paints Tractor",
+      category: "Exterior Paint",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      price: "₹2,800"
+    },
+    {
+      name: "Asian Paints Texture",
+      category: "Texture Paint",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+      price: "₹3,800"
+    },
+    {
+      name: "Asian Paints Primer",
+      category: "Primer",
+      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=300&fit=crop",
+      price: "₹1,800"
     }
   ];
 
+  // Banner slides for carousel
+  const bannerSlides = [
+    <div key="slide1" className="banner-slide">
+      <div className="banner-content">
+        <div className="banner-text">
+          <h1>Welcome to Juction Hardware</h1>
+          <h2>Official Asian Paints Dealer in Chitwan</h2>
+          <p>
+            Transform your space with premium Asian Paints. We offer the complete range 
+            of interior, exterior, and specialty paints with expert consultation and 
+            professional support.
+          </p>
+          <div className="banner-buttons">
+            <Link to="/products" className="btn btn-primary">
+              Explore Products
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              Get Quote
+            </Link>
+          </div>
+        </div>
+        <div className="banner-image">
+          <img 
+            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop" 
+            alt="Asian Paints Collection"
+          />
+        </div>
+      </div>
+    </div>,
+    <div key="slide2" className="banner-slide">
+      <div className="banner-content">
+        <div className="banner-text">
+          <h1>Premium Quality Paints</h1>
+          <h2>100% Genuine Asian Paints</h2>
+          <p>
+            Experience the finest quality paints with superior coverage, durability, 
+            and beautiful finishes. From interior to exterior, we have everything you need.
+          </p>
+          <div className="banner-buttons">
+            <Link to="/services" className="btn btn-primary">
+              Our Services
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+        <div className="banner-image">
+          <img 
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" 
+            alt="Premium Paints"
+          />
+        </div>
+      </div>
+    </div>,
+    <div key="slide3" className="banner-slide">
+      <div className="banner-content">
+        <div className="banner-text">
+          <h1>Professional Painting Services</h1>
+          <h2>Expert Team & Quality Work</h2>
+          <p>
+            Our professional painting team ensures perfect results with attention to detail. 
+            From color consultation to final finish, we handle everything.
+          </p>
+          <div className="banner-buttons">
+            <Link to="/services" className="btn btn-primary">
+              View Services
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/about" className="btn btn-secondary">
+              About Us
+            </Link>
+          </div>
+        </div>
+        <div className="banner-image">
+          <img 
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" 
+            alt="Professional Services"
+          />
+        </div>
+      </div>
+    </div>
+  ];
+
+  // Product slides for carousel (without text)
+  const productSlides = products.map((product, index) => (
+    <div key={index} className="product-slide">
+      <div className="product-slide-image">
+        <img src={product.image} alt={product.name} />
+        <div className="product-slide-overlay">
+          <div className="product-slide-info">
+            <h3>{product.name}</h3>
+            <p className="product-slide-price">{product.price}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
+
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero Section with Carousel */}
       <section className="hero">
         <div className="container">
-          <div className="hero-content">
-            <motion.div 
-              className="hero-text"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1>Welcome to Juction Hardware</h1>
-              <h2>Official Asian Paints Dealer in Chitwan</h2>
-              <p>
-                Transform your space with premium Asian Paints. We offer the complete range 
-                of interior, exterior, and specialty paints with expert consultation and 
-                professional support.
-              </p>
-              <div className="hero-buttons">
-                <Link to="/products" className="btn btn-primary">
-                  Explore Products
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/contact" className="btn btn-secondary">
-                  Get Quote
-                </Link>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="hero-image"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop" 
-                alt="Asian Paints Collection"
-              />
-            </motion.div>
-          </div>
+          <Carousel 
+            items={bannerSlides}
+            autoPlay={true}
+            interval={6000}
+            showDots={true}
+            showArrows={true}
+          />
         </div>
       </section>
 
@@ -132,7 +223,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Products Preview */}
+      {/* Products Preview with Carousel */}
       <section className="products-preview section">
         <div className="container">
           <div className="section-header">
@@ -141,28 +232,14 @@ const Home = () => {
               Explore our premium collection of Asian Paints
             </p>
           </div>
-          <div className="products-grid">
-            {products.map((product, index) => (
-              <motion.div 
-                key={index}
-                className="product-card card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                </div>
-                <div className="product-info">
-                  <span className="product-category">{product.category}</span>
-                  <h3>{product.name}</h3>
-                  <div className="product-price">{product.price}</div>
-                  <Link to="/products" className="btn btn-primary">
-                    View Details
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+          <div className="products-carousel">
+            <Carousel 
+              items={productSlides}
+              autoPlay={true}
+              interval={4000}
+              showDots={true}
+              showArrows={true}
+            />
           </div>
           <div className="text-center">
             <Link to="/products" className="btn btn-secondary">
