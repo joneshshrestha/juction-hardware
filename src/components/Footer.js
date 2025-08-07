@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Our Services */}
           <div className="footer-section">
             <h3>Our Services</h3>
             <ul className="footer-links">
@@ -68,27 +68,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - now styled as a list for consistency */}
           <div className="footer-section">
             <h3>Contact Info</h3>
-            <div className="contact-info">
-              <div className="contact-item">
-                <MapPin size={16} />
-                <span>Main Street, Bharatpur, Chitwan, Nepal</span>
-              </div>
-              <div className="contact-item">
-                <Phone size={16} />
-                <span>+977-56-123456</span>
-              </div>
-              <div className="contact-item">
-                <Mail size={16} />
-                <span>info@juctionhardware.com</span>
-              </div>
-              <div className="contact-item">
-                <Clock size={16} />
-                <span>Mon-Sat: 9AM-7PM</span>
-              </div>
-            </div>
+            <ul className="footer-links">
+              <li><MapPin size={16} style={{marginRight: '8px', verticalAlign: 'middle'}} /> Main Street, Bharatpur, Chitwan, Nepal</li>
+              <li><Phone size={16} style={{marginRight: '8px', verticalAlign: 'middle'}} /> +977-56-123456</li>
+              <li><Mail size={16} style={{marginRight: '8px', verticalAlign: 'middle'}} /> info@juctionhardware.com</li>
+              <li><Clock size={16} style={{marginRight: '8px', verticalAlign: 'middle'}} /> Mon-Sat: 9AM-7PM</li>
+            </ul>
           </div>
         </div>
 

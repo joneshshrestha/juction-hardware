@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="container">
         <Link to="/" className="navbar-brand">
           <div className="brand-content">
-            <div className="brand-logo">JH</div>
+            <img src="/images/logo.jpg" alt="Asian Paints Chitwan Nepal Logo" className="brand-logo-img" />
             <div className="brand-text">
               <h3>Juction Hardware</h3>
               <p>Asian Paints Dealer</p>

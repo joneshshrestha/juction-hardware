@@ -1,13 +1,14 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .carousel-slide {
@@ -21,42 +22,45 @@
 /* Unified Navigation Bar */
 .carousel-navigation {
   position: absolute;
-  bottom: 20px;
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
 
 .navigation-container {
-  background: white;
-  border-radius: 25px;
-  padding: 8px 16px;
+  background: var(--white);
+  border-radius: 30px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(49, 14, 95, 0.15);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Navigation Arrows */
 .nav-arrow {
   background: none;
   border: none;
-  color: var(--text-dark);
+  color: var(--secondary-color);
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  font-weight: 600;
 }
 
 .nav-arrow:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(49, 14, 95, 0.1);
   transform: scale(1.1);
+  color: var(--primary-color);
 }
 
 .nav-arrow-left {
@@ -70,36 +74,61 @@
 /* Navigation Dots */
 .nav-dots {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
 }
 
 .nav-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: none;
-  background: #d1d5db;
+  background: #e5e7eb;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
 }
 
 .nav-dot:hover {
-  background: #9ca3af;
+  background: #d1d5db;
   transform: scale(1.2);
 }
 
 .nav-dot.active {
-  background: #6b7280;
-  width: 24px;
-  border-radius: 4px;
+  background: var(--secondary-color);
+  width: 28px;
+  border-radius: 5px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .carousel-navigation {
-    bottom: 15px;
+    bottom: -35px;
+  }
+
+  .navigation-container {
+    padding: 8px 16px;
+    gap: 12px;
+  }
+
+  .nav-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .nav-dot.active {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-navigation {
+    bottom: -30px;
   }
 
   .navigation-container {
@@ -112,38 +141,17 @@
     height: 20px;
   }
 
-  .nav-dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  .nav-dot.active {
-    width: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navigation-container {
-    padding: 4px 8px;
-    gap: 6px;
-  }
-
-  .nav-arrow {
-    width: 18px;
-    height: 18px;
-  }
-
   .nav-arrow svg {
     width: 14px;
     height: 14px;
   }
 
   .nav-dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
   }
 
   .nav-dot.active {
-    width: 16px;
+    width: 20px;
   }
 } 
