@@ -16,9 +16,9 @@ const Products = () => {
 
   const getImageSrcCandidates = (productName, category) => {
     const slug = toSlug(productName);
-    // Interior images live in capitalized "Interior", exterior in lowercase "exterior"
+    // All category folders are lowercase under public/images
     const normalizedCategory = (category || '').toLowerCase();
-    const dir = normalizedCategory === 'interior' ? 'Interior' : normalizedCategory || 'Interior';
+    const dir = normalizedCategory || 'interior';
     const base = `/images/${dir}/${slug}`;
     return [`${base}.jpg`, `${base}.jpeg`, `${base}.png`, `${base}.webp`];
   };
