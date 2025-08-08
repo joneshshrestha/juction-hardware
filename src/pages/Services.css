@@ -256,6 +256,13 @@
   font-weight: 500;
 }
 
+/* Ensure CTA icons are clearly visible over the gradient */
+.cta-contact .contact-item svg {
+  color: #ffffff;
+  opacity: 1;
+  stroke-width: 2.2;
+}
+
 /* Awards & Recognition */
 .awards {
   background: var(--white);

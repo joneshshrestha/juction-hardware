@@ -14,49 +14,51 @@ import './About.css';
 
 const About = () => {
   const stats = [
-    { number: "15+", label: "Years Experience" },
-    { number: "1000+", label: "Happy Customers" },
-    { number: "50+", label: "Team Members" },
+    { number: "26+", label: "Years Experience" },
+    { number: "5000+", label: "Happy Customers" },
+    { number: "1000+", label: "Home Transformed" },
     { number: "100%", label: "Quality Guarantee" }
   ];
 
   const values = [
     {
       icon: <Award size={32} />,
-      title: "Quality First",
-      description: "We never compromise on quality. Every product and service meets the highest standards."
+      title: 'Quality First',
+      description:
+        'We never compromise on quality. Every product and service meets the highest standards.',
     },
     {
       icon: <Users size={32} />,
-      title: "Customer Focus",
-      description: "Our customers are at the heart of everything we do. Your satisfaction is our priority."
+      title: 'Customer Focus',
+      description:
+        'Our customers are at the heart of everything we do. Your satisfaction is our priority.',
     },
     {
       icon: <CheckCircle size={32} />,
-      title: "Reliability",
-      description: "Trusted by thousands of customers in Chitwan for consistent, reliable service."
-    }
+      title: 'Unbeatable Value',
+      description: "We deliver at a price you won't find anywhere else, offering the best value in Chitwan.",
+    },
   ];
 
   const team = [
     {
-      name: "Ram Bahadur Thapa",
-      position: "Founder & CEO",
-      experience: "20+ years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+      name: 'Bhim Kumar Shrestha',
+      position: 'Founder',
+      experience: '26+ years',
+      image: '/images/bhim-kumar-shrestha.jpg',
     },
     {
-      name: "Sita Devi Shrestha",
-      position: "Operations Manager",
-      experience: "15+ years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face"
+      name: 'Jonesh Shrestha',
+      position: 'Developer',
+      experience: '5+ years',
+      image: '/images/jonesh-shrestha.jpg',
     },
     {
-      name: "Hari Prasad Tamang",
-      position: "Technical Head",
-      experience: "12+ years",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
-    }
+      name: 'Sabitri Shrestha',
+      position: 'Sales Representative',
+      experience: '5+ years',
+      image: '/images/sabitri-shrestha.jpg',
+    },
   ];
 
   return (
@@ -71,11 +73,11 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1>About Juction Hardware</h1>
-              <h2>Your Trusted Asian Paints Partner in Chitwan</h2>
+              <h1>About Us</h1>
+              <h2>Your Trusted Asian Paints Dealer in Chitwan</h2>
               <p>
                 For over 15 years, Juction Hardware has been the leading Asian Paints dealer 
-                in Chitwan, Nepal. We've built our reputation on quality, reliability, and 
+                in Chitwan, Nepal. We've built our reputation on quality, reliability, best prices and 
                 exceptional customer service. Our commitment to excellence has made us the 
                 preferred choice for homeowners, contractors, and businesses throughout the region.
               </p>
@@ -87,7 +89,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop" 
+                src="/images/about-1.jpg" 
                 alt="Juction Hardware Store"
               />
             </motion.div>
@@ -123,13 +125,13 @@ const About = () => {
             >
               <h2>Our Story</h2>
               <p>
-                Founded in 2008, Juction Hardware started as a small family business with a 
-                simple mission: to provide the highest quality Asian Paints products and 
-                exceptional service to the people of Chitwan. What began as a modest store 
+                Founded in 1998, Juction Hardware started as a small family business with a 
+                simple mission: to provide the highest quality home improvement products and 
+                exceptional service to the people of Chitwan. What began as a modest hardware store 
                 has grown into the region's most trusted Asian Paints dealer.
               </p>
               <p>
-                Over the years, we've expanded our services to include professional painting 
+                Over the years, we've focused and expanded our services to include professional painting 
                 consultation, color selection assistance, and complete painting solutions. 
                 Our team of experienced professionals is dedicated to helping you transform 
                 your space with the perfect colors and finishes.
@@ -137,7 +139,7 @@ const About = () => {
               <p>
                 Today, we're proud to serve thousands of satisfied customers across Chitwan, 
                 maintaining the same commitment to quality and service that we started with 
-                over a decade ago.
+                over decades ago.
               </p>
             </motion.div>
             <motion.div
@@ -147,7 +149,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" 
+                src="/images/about-2.jpg" 
                 alt="Our Journey"
               />
             </motion.div>
@@ -181,7 +183,7 @@ const About = () => {
         {/* Team Section */}
         <section className="team-section section">
           <div className="container">
-            <h2 className="section-title">Our Leadership Team</h2>
+            <h2 className="section-title">Our Team</h2>
             <div className="team-grid">
               {team.map((member, index) => (
                 <motion.div
@@ -219,7 +221,7 @@ const About = () => {
                   <MapPin size={24} />
                 </div>
                 <h3>Visit Us</h3>
-                <p>Main Street, Bharatpur<br />Chitwan, Nepal</p>
+                <p>Main Road, Narayangarh, Bharatpur<br />Chitwan, Nepal</p>
               </motion.div>
 
               <motion.div
@@ -232,7 +234,7 @@ const About = () => {
                   <Phone size={24} />
                 </div>
                 <h3>Call Us</h3>
-                <p>+977-56-123456<br />+977-985-123456</p>
+                <p>+977-9845156783<br />+977-9811311320</p>
               </motion.div>
 
               <motion.div
@@ -245,7 +247,7 @@ const About = () => {
                   <Clock size={24} />
                 </div>
                 <h3>Business Hours</h3>
-                <p>Monday - Saturday<br />9:00 AM - 7:00 PM</p>
+                <p>Tuesday - Sunday<br />8:00 AM - 7:00 PM</p>
               </motion.div>
             </div>
           </div>

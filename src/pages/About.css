@@ -112,6 +112,13 @@
 .values-section {
   background: white;
   margin-bottom: 80px;
+  /* make this section full-bleed across the viewport */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .values-grid {
@@ -206,6 +213,13 @@
 /* Contact Info */
 .contact-info {
   background: white;
+  /* make this section full-bleed across the viewport */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .contact-grid {

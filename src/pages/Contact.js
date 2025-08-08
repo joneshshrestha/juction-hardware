@@ -19,6 +19,8 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -27,21 +29,60 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-    
-    // Reset submission status after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/bhimshrestha3669@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject || 'General Inquiry',
+          message: formData.message,
+          _subject: `Website Inquiry: ${formData.subject || 'General Inquiry'}`,
+          _template: 'table'
+        })
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+      const result = await response.json();
+      if (result.success !== 'true') throw new Error('Message not accepted');
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 4000);
+    } catch (err) {
+      console.error(err);
+      setSubmitError('There was an issue sending your message. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Quick-action handlers for the info cards
+  const handleGetDirections = () => {
+    const destination = 'Juction Hardware Stores | Asian Paints Dealer, Narayangarh, Bharatpur, Chitwan, Nepal';
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleCallNow = () => {
+    window.location.href = 'tel:+9779845156783';
+  };
+
+  const handleSendEmail = () => {
+    const to = 'bhimshrestha3669@gmail.com';
+    const subject = encodeURIComponent('Inquiry from Juction Hardware website');
+    const body = encodeURIComponent('Hello Juction Hardware team,\n\nI would like to...');
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
   };
 
   const contactInfo = [
@@ -49,25 +90,29 @@ const Contact = () => {
       icon: <MapPin size={24} />,
       title: "Visit Us",
       details: "Main Road, Narayangarh, Bharatpur, Chitwan, Nepal",
-      action: "Get Directions"
+      action: "Get Directions",
+      onClick: handleGetDirections
     },
     {
       icon: <Phone size={24} />,
       title: "Call Us",
       details: "+977-9845156783\n+977-9811311320",
-      action: "Call Now"
+      action: "Call Now",
+      onClick: handleCallNow
     },
     {
       icon: <Mail size={24} />,
       title: "Email Us",
       details: "bhimshrestha3669@gmail.com\ncontact@juctionhardware.com.np",
-      action: "Send Email"
+      action: "Send Email",
+      onClick: handleSendEmail
     },
     {
       icon: <Clock size={24} />,
       title: "Business Hours",
       details: "Tuesday - Sunday\n8:00 AM - 7:00 PM",
-      action: "Monday Closed"
+      action: "Monday Closed",
+      onClick: null
     }
   ];
 
@@ -105,7 +150,14 @@ const Contact = () => {
                   <div className="info-content">
                     <h3>{info.title}</h3>
                     <p>{info.details}</p>
-                    <button className="info-action-btn">{info.action}</button>
+                    <button
+                      className="info-action-btn"
+                      onClick={info.onClick || undefined}
+                      disabled={!info.onClick}
+                      aria-disabled={!info.onClick}
+                    >
+                      {info.action}
+                    </button>
                   </div>
                 </div>
               ))}
@@ -155,7 +207,6 @@ const Contact = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -170,6 +221,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        required
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -205,9 +257,10 @@ const Contact = () => {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="submit-btn">
+                  {submitError && <p className="error-text">{submitError}</p>}
+                  <button type="submit" className="submit-btn" disabled={isSubmitting}>
                     <Send size={16} />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               )}

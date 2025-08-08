@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Paintbrush, 
@@ -86,23 +87,26 @@ const Services = () => {
 
   const testimonials = [
     {
-      name: "Ram Bahadur",
-      location: "Bharatpur, Chitwan",
+      name: 'Aditya Thebe',
+      location: 'Bharatpur, Chitwan',
       rating: 5,
-      comment: "Excellent service! The team was professional and the paint quality is outstanding. Highly recommended!"
+      comment:
+        'Fantastic experience at this paints dealer! Knowledgeable staff, vast color selection, and top-notch quality. Best prices and excellent service!',
     },
     {
-      name: "Sita Devi",
-      location: "Narayangarh, Chitwan",
+      name: 'Biplab Karki',
+      location: 'Sauraha, Chitwan',
       rating: 5,
-      comment: "Great color consultation and the exterior paint has held up perfectly through monsoon season."
+      comment:
+        'Great selection of paints, reasonable prices and great customer service. Highly recommended for all your painting needs.',
     },
     {
-      name: "Hari Prasad",
-      location: "Ratnanagar, Chitwan",
+      name: 'Rohit Shrestha',
+      location: 'Baraghare, Chitwan',
       rating: 5,
-      comment: "Best Asian Paints dealer in Chitwan. Competitive prices and excellent customer service."
-    }
+      comment:
+        'Best Asian Paints dealer in Chitwan. Reliable paint dealer with great prices and very friendly and helpful staff! Competitive prices.',
+    },
   ];
 
   const renderStars = (rating) => {
@@ -118,69 +122,71 @@ const Services = () => {
 
   return (
     <>
-    <div className="services-page">
-      <div className="container">
-        {/* Header */}
-        <div className="services-header">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="section-title">Our Services</h1>
-            <p className="section-subtitle">
-              Comprehensive painting solutions and expert consultation services. 
-              From interior to exterior, we've got you covered with premium Asian Paints.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Services Grid */}
-        <div className="services-grid">
-          {services.map((service, index) => (
+      <div className="services-page">
+        <div className="container">
+          {/* Header */}
+          <div className="services-header">
             <motion.div
-              key={index}
-              className="service-card card"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="service-icon">
-                {service.icon}
-              </div>
-              <h3>{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-              
-              <div className="service-features">
-                {service.features.map((feature, idx) => (
-                  <div key={idx} className="feature-item">
-                    <CheckCircle size={16} />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-
+              <h1 className="section-title">Our Services</h1>
+              <p className="section-subtitle">
+                Comprehensive painting solutions and expert consultation services. From interior to
+                exterior, we've got you covered with premium Asian Paints.
+              </p>
             </motion.div>
-          ))}
-        </div>
+          </div>
 
-        {/* Awards & Recognition */}
+          {/* Services Grid */}
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                className="service-card card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+
+                <div className="service-features">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="feature-item">
+                      <CheckCircle size={16} />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Awards & Recognition */}
         </div>
       </div>
       <section className="awards section">
         <div className="container">
-            <h2 className="section-title">Awards & Recognition</h2>
-            <p className="section-subtitle">Proud moments that reflect our commitment to quality, service, and trust</p>
-            <div className="awards-grid">
-              <div className="award-card card">
-                <div className="award-image-wrap">
-                  <img src="/images/award-1.jpg" alt="Award" className="award-image" />
-                </div>
-                <h3>Top Dealer Award</h3>
-                <p>Recognized for exceptional performance and customer satisfaction in the region</p>
-                <span className="award-year">2023</span>
+          <h2 className="section-title">Awards & Recognition</h2>
+          <p className="section-subtitle">
+            Proud moments that reflect our commitment to quality, service, and trust.
+          </p>
+          <div className="awards-grid">
+            <div className="award-card card">
+              <div className="award-image-wrap">
+                <img src="/images/award-1.jpg" alt="Award" className="award-image" />
               </div>
-              <div className="award-card card">
+              <h3>Privilege Club Dealer Award</h3>
+              <p>
+                Recognized for exceptional performance and awarded Privilege Club Membership by
+                Asian Paints in Cape Town, South Africa.
+              </p>
+              <span className="award-year">2022-2023</span>
+            </div>
+            {/* <div className="award-card card">
                 <div className="award-image-wrap">
                   <img src="/images/award-1.jpg" alt="Award" className="award-image" />
                 </div>
@@ -203,72 +209,69 @@ const Services = () => {
                 <h3>Quality Leadership</h3>
                 <p>Awarded for maintaining the highest standards in products and execution</p>
                 <span className="award-year">2020</span>
-              </div>
-            </div>
+              </div> */}
           </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="testimonials section">
-          <div className="container">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <div className="testimonials-grid">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  className="testimonial-card card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="testimonial-rating">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                  <p className="testimonial-comment">"{testimonial.comment}"</p>
-                  <div className="testimonial-author">
-                    <div className="author-info">
-                      <h4>{testimonial.name}</h4>
-                      <span>{testimonial.location}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-    
-    <section className="services-cta section">
-      <div className="container">
-        <div className="cta-content">
-          <motion.div
-            className="cta-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>Ready to Transform Your Space?</h2>
-            <p>
-              Get in touch with us for a free consultation and quote. 
-              Our expert team is ready to help you choose the perfect colors and services.
-            </p>
-            <div className="cta-contact">
-              <div className="contact-item">
-                <Phone size={20} />
-                <span>+977-9845156783</span>
-              </div>
-              <div className="contact-item">
-                <MapPin size={20} />
-                <span>Chitwan, Nepal</span>
-              </div>
-            </div>
-            <button className="btn btn-primary">
-              Get Free Quote
-            </button>
-          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Testimonials */}
+      <section className="testimonials section">
+        <div className="container">
+          <h2 className="section-title">What Our Customers Say</h2>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="testimonial-card card"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="testimonial-rating">{renderStars(testimonial.rating)}</div>
+                <p className="testimonial-comment">"{testimonial.comment}"</p>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4>{testimonial.name}</h4>
+                    <span>{testimonial.location}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="services-cta section">
+        <div className="container">
+          <div className="cta-content">
+            <motion.div
+              className="cta-text"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2>Ready to Transform Your Space?</h2>
+              <p>
+                Get in touch with us for a free consultation and quote. Our expert team is ready to
+                help you choose the perfect colors and services.
+              </p>
+              <div className="cta-contact">
+                <div className="contact-item">
+                  <Phone size={20} />
+                  <span>+977-9845156783</span>
+                </div>
+                <div className="contact-item">
+                  <MapPin size={20} />
+                  <span>Chitwan, Nepal</span>
+                </div>
+              </div>
+              <Link to="/contact" className="btn btn-primary">
+                Get Free Quote
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
