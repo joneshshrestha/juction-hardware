@@ -1,8 +1,8 @@
 .footer {
   background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
   color: var(--white);
-  padding: 60px 0 0 0;
-  margin-top: 80px;
+  padding: 48px 0 0 0;
+  margin-top: 0; /* removed gap */
   position: relative;
 }
 
@@ -53,14 +53,14 @@
   color: var(--white);
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 4px; /* was 12px */
   font-family: 'Montserrat', sans-serif;
 }
 
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin: 0; /* remove extra gap */
 }
 
 .social-links {
@@ -130,25 +130,38 @@
   width: 4px;
 }
 
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  line-height: 1.5;
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contact-item span {
-  color: var(--white);
-  font-weight: 500;
+/* Grid: icon column + flexible text column */
+.contact-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  column-gap: 12px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
 }
 
 .contact-item svg {
   color: var(--primary-color);
-  flex-shrink: 0;
   margin-top: 2px;
+}
+
+.contact-text {
+  display: block;
+  line-height: 1.6;
+}
+
+/* Keep the email on a single line; allow it to shrink with ellipsis if necessary */
+.contact-email {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-bottom {

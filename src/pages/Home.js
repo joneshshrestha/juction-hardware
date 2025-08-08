@@ -177,7 +177,6 @@ const Home = () => {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Featured Products</h2>
-            <p className="section-subtitle">Explore our premium collection of Asian Paints</p>
           </div>
           <div className="products-carousel">
             <Carousel items={featuredSlides} autoPlay={true} interval={7000} showDots={true} showArrows={true} />
