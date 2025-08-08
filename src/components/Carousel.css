@@ -14,15 +14,13 @@
 .carousel-slide {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* ensure child fills width */
 }
 
 /* Unified Navigation Bar */
 .carousel-navigation {
   position: absolute;
-  bottom: -40px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -30,14 +28,13 @@
 
 .navigation-container {
   background: var(--white);
-  border-radius: 30px;
-  padding: 10px 20px;
+  border-radius: 22px;
+  padding: 6px 14px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  box-shadow: 0 8px 32px rgba(49, 14, 95, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Navigation Arrows */
@@ -46,41 +43,33 @@
   border: none;
   color: var(--secondary-color);
   cursor: pointer;
-  padding: 6px;
+  padding: 4px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   font-weight: 600;
 }
 
 .nav-arrow:hover {
-  background: rgba(49, 14, 95, 0.1);
-  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.08);
   color: var(--primary-color);
-}
-
-.nav-arrow-left {
-  margin-right: 4px;
-}
-
-.nav-arrow-right {
-  margin-left: 4px;
 }
 
 /* Navigation Dots */
 .nav-dots {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
 .nav-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   border: none;
   background: #e5e7eb;
@@ -89,69 +78,28 @@
   padding: 0;
 }
 
-.nav-dot:hover {
-  background: #d1d5db;
-  transform: scale(1.2);
-}
+.nav-dot:hover { background: #d1d5db; transform: scale(1.15); }
 
 .nav-dot.active {
   background: var(--secondary-color);
-  width: 28px;
+  width: 22px;
   border-radius: 5px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .carousel-navigation {
-    bottom: -35px;
-  }
-
-  .navigation-container {
-    padding: 8px 16px;
-    gap: 12px;
-  }
-
-  .nav-arrow {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .nav-dot.active {
-    width: 24px;
-  }
+  .carousel-navigation { bottom: -18px; }
+  .navigation-container { padding: 6px 10px; gap: 8px; }
+  .nav-arrow { width: 20px; height: 20px; }
+  .nav-dot { width: 6px; height: 6px; }
+  .nav-dot.active { width: 18px; }
 }
 
 @media (max-width: 480px) {
-  .carousel-navigation {
-    bottom: -30px;
-  }
-
-  .navigation-container {
-    padding: 6px 12px;
-    gap: 8px;
-  }
-
-  .nav-arrow {
-    width: 20px;
-    height: 20px;
-  }
-
-  .nav-arrow svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .nav-dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  .nav-dot.active {
-    width: 20px;
-  }
+  .carousel-navigation { bottom: -16px; }
+  .navigation-container { padding: 4px 8px; gap: 6px; }
+  .nav-arrow { width: 18px; height: 18px; }
+  .nav-arrow svg { width: 12px; height: 12px; }
+  .nav-dot { width: 5px; height: 5px; }
+  .nav-dot.active { width: 14px; }
 } 

@@ -1,29 +1,24 @@
 .navbar {
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   z-index: 1000;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: none;
 }
 
 .navbar .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px 32px;
+  align-items: center;
+  padding: 16px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Brand block */
 .navbar-brand {
   text-decoration: none;
   color: inherit;
@@ -32,159 +27,142 @@
 .brand-content {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
 .brand-logo-img {
-  width: 54px;
-  height: 54px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  background: #fff;
-  border: 1.5px solid #f3f3f3;
-  transition: box-shadow 0.2s;
+  height: 42px;
+  width: auto;
+  margin-right: 14px;
 }
 
-.brand-logo-img:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .brand-text h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-dark);
   margin: 0;
-  line-height: 1.2;
-  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-  letter-spacing: -0.5px;
+  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
 }
 
 .brand-text p {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin: 0;
+  margin: 4px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neutral-text-light);
   line-height: 1.2;
-  font-family: 'Inter', Arial, sans-serif;
 }
 
+/* Menu */
 .navbar-menu {
   display: flex;
   align-items: center;
   gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--neutral-text);
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 15px;
+  transition: all 0.3s ease;
   position: relative;
-  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-  font-size: 1.05rem;
   padding: 8px 0;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-color);
-}
+.nav-link:hover { color: var(--primary-color); }
 
-.nav-link.active::after {
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  right: 0;
+  width: 0;
   height: 2px;
-  background: var(--primary-color);
-  border-radius: 1px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
 }
 
-.navbar-contact {
-  display: flex;
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: var(--primary-color); }
+.nav-link.active::after { width: 100%; }
+
+/* Call Now button */
+.navbar-contact .contact-btn {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
 }
 
 .contact-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   background: var(--primary-color);
-  color: white;
-  padding: 10px 16px;
+  color: var(--white);
+  padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
   transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
+  line-height: 1;
 }
+
+.contact-btn svg { display: block; }
 
 .contact-btn:hover {
-  background: #c0392b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
 }
 
+/* Mobile */
 .navbar-toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-dark);
+  padding: 8px;
+  color: var(--neutral-text);
+  font-size: 1.5rem;
 }
 
-@media (max-width: 1024px) {
-  .navbar .container {
-    padding: 12px 18px;
-  }
-  .navbar-menu {
-    gap: 18px;
-  }
+/* add a helper to offset fixed navbar height */
+.hero-offset {
+  margin-top: 72px; /* approximate navbar height incl. shadow */
 }
 
 @media (max-width: 768px) {
-  .navbar .container {
-    padding: 10px 10px;
-  }
   .navbar-menu {
     position: fixed;
-    top: 70px;
+    top: 68px;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--white);
     flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-110%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    gap: 20px;
+    gap: 16px;
+    z-index: 999;
   }
-
   .navbar-menu.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-contact {
-    display: none;
-  }
-
-  .brand-text h3 {
-    font-size: 1.1rem;
-  }
-
-  .brand-text p {
-    font-size: 0.8rem;
-  }
-  .brand-logo-img {
-    width: 40px;
-    height: 40px;
-  }
+  .navbar-toggle { display: block; }
+  .navbar-contact { display: none; }
 } 
