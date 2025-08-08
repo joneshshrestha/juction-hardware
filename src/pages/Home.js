@@ -182,9 +182,6 @@ const Home = () => {
           <div className="products-carousel">
             <Carousel items={featuredSlides} autoPlay={true} interval={7000} showDots={true} showArrows={true} />
           </div>
-          <div className="view-all-btn">
-            <Link to="/products" className="btn btn-secondary">View All Products</Link>
-          </div>
         </div>
       </section>
 
