@@ -57,29 +57,35 @@ const Home = () => {
     },
   ];
 
-  const products = [
-    { name: "Asian Paints Ace", category: "Interior Paint", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1600&h=900&fit=crop", price: "₹2,500" },
-    { name: "Asian Paints Apex", category: "Exterior Paint", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&h=900&fit=crop", price: "₹3,200" },
-    { name: "Asian Paints Royale", category: "Premium Interior", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1600&h=900&fit=crop", price: "₹4,500" },
-    { name: "Asian Paints Tractor", category: "Exterior Paint", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&h=900&fit=crop", price: "₹2,800" },
-    { name: "Asian Paints Texture", category: "Texture Paint", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&h=900&fit=crop", price: "₹3,800" },
-    { name: "Asian Paints Primer", category: "Primer", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1600&h=900&fit=crop", price: "₹1,800" }
-  ];
-
   // Hero slides: first is video, then 3 images from /public/images
   const bannerSlides = [
     <div key="slide0" className="banner-slide">
       <div className="banner-image">
-        <video className="banner-media" src="/images/banner-0.mp4" autoPlay muted playsInline preload="metadata"></video>
+        <video
+          className="banner-media"
+          src="/images/banner-0.mp4"
+          autoPlay
+          muted
+          playsInline
+          preload="metadata"
+        ></video>
       </div>
       <div className="banner-content">
         <div className="banner-text">
           <h1>Welcome to Juction Hardware</h1>
           <h2>Official Asian Paints Dealer in Chitwan</h2>
-          <p>Transform your space with premium Asian Paints. We offer the complete range of interior, exterior, and specialty paints with expert consultation and professional support.</p>
+          <p>
+            Transform your space with premium Asian Paints. We offer the complete range of interior,
+            exterior, and specialty paints with expert consultation and professional support.
+          </p>
           <div className="banner-buttons">
-            <Link to="/products" className="btn btn-primary">Explore Products<ArrowRight size={16} /></Link>
-            <Link to="/contact" className="btn btn-secondary">Get Quote</Link>
+            <Link to="/products" className="btn btn-primary">
+              Explore Products
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              Get Quote
+            </Link>
           </div>
         </div>
       </div>
@@ -90,12 +96,21 @@ const Home = () => {
       </div>
       <div className="banner-content">
         <div className="banner-text">
-          <h1>Premium Quality Paints</h1>
-          <h2>100% Genuine Asian Paints</h2>
-          <p>Experience the finest quality paints with superior coverage, durability, and beautiful finishes. From interior to exterior, we have everything you need.</p>
+          <h1>Best Price Guarantee</h1>
+          <h2>Retail and Wholesale</h2>
+          <p>
+            Experience the finest quality paints at the cheapest price with superior coverage,
+            durability, and beautiful finishes. From interior to exterior, we have everything you
+            need.
+          </p>
           <div className="banner-buttons">
-            <Link to="/services" className="btn btn-primary">Our Services<ArrowRight size={16} /></Link>
-            <Link to="/contact" className="btn btn-secondary">Contact Us</Link>
+            <Link to="/services" className="btn btn-primary">
+              Our Services
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>
@@ -106,12 +121,20 @@ const Home = () => {
       </div>
       <div className="banner-content">
         <div className="banner-text">
-          <h1>Professional Painting Services</h1>
-          <h2>Expert Team & Quality Work</h2>
-          <p>Our professional painting team ensures perfect results with attention to detail. From color consultation to final finish, we handle everything.</p>
+          <h1>Color Visualizer</h1>
+          <h2>Pick the perfect shades</h2>
+          <p>
+            Visualize it before you paint it! We provide free color visualizer to help you choose
+            the perfect color for your home.
+          </p>
           <div className="banner-buttons">
-            <Link to="/services" className="btn btn-primary">View Services<ArrowRight size={16} /></Link>
-            <Link to="/about" className="btn btn-secondary">About Us</Link>
+            <Link to="/services" className="btn btn-primary">
+              View Services
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/about" className="btn btn-secondary">
+              About Us
+            </Link>
           </div>
         </div>
       </div>
@@ -124,14 +147,22 @@ const Home = () => {
         <div className="banner-text">
           <h1>Trusted by Homeowners</h1>
           <h2>Quality Products & Service</h2>
-          <p>From premium paints to expert guidance, we are your partner for beautiful, long-lasting finishes.</p>
+          <p>
+            From premium paints to expert guidance, we are your partner for beautiful, long-lasting
+            finishes.
+          </p>
           <div className="banner-buttons">
-            <Link to="/products" className="btn btn-primary">Explore Products<ArrowRight size={16} /></Link>
-            <Link to="/contact" className="btn btn-secondary">Get Quote</Link>
+            <Link to="/products" className="btn btn-primary">
+              Explore Products
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="btn btn-secondary">
+              Get Quote
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </div>,
   ];
 
   // Featured products promotional slides (image-only)

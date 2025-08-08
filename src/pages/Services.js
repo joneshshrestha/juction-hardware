@@ -2,98 +2,86 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Paintbrush, 
-  Palette, 
   Truck, 
-  Users, 
-  Shield, 
-  Clock,
   CheckCircle,
   Star,
   Phone,
-  MapPin
+  MapPin,
+  PaintRoller,
+  SwatchBook,
+  ShieldCheck,
+  DollarSign
 } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
   const services = [
     {
-      icon: <Paintbrush size={32} />,
-      title: "Interior Painting",
-      description: "Professional interior painting services with premium Asian Paints products",
+      icon: <DollarSign size={32} />,
+      title: 'Cheapest Price Guarantee',
+      description: 'We offer the lowest prices on all Asian Paints products',
       features: [
-        "Wall preparation and priming",
-        "Color consultation and selection",
-        "Premium finish application",
-        "Clean-up and protection"
+        'Guaranteed best price',
+        'Wholesale rates for bulk purchases',
+        'Direct dealer pricing',
+        'Price beat guarantee on all products',
       ],
-      price: "₹15/sq ft",
-      duration: "2-5 days"
     },
     {
-      icon: <Palette size={32} />,
-      title: "Exterior Painting",
-      description: "Weather-resistant exterior painting with superior protection",
+      icon: <Paintbrush size={32} />,
+      title: 'Interior Painting',
+      description: 'Professional interior painting services with premium Asian Paints products',
       features: [
-        "Surface preparation and repair",
-        "Weather-resistant coatings",
-        "UV protection application",
-        "Long-lasting durability"
+        'Wall preparation and priming',
+        'Color consultation and selection',
+        'Premium finish application',
+        'Clean-up and protection',
       ],
-      price: "₹20/sq ft",
-      duration: "3-7 days"
+    },
+    {
+      icon: <PaintRoller size={32} />,
+      title: 'Exterior Painting',
+      description: 'Weather-resistant exterior painting with superior protection',
+      features: [
+        'Surface preparation and repair',
+        'Weather-resistant coatings',
+        'UV protection application',
+        'Long-lasting durability',
+      ],
+    },
+    {
+      icon: <SwatchBook size={32} />,
+      title: 'Color Consultation',
+      description: 'Professional color consultation for your space',
+      features: [
+        'Personalized color schemes',
+        'Sample testing and approval',
+        'Lighting consideration',
+        'Trend and style guidance',
+      ],
     },
     {
       icon: <Truck size={32} />,
-      title: "Paint Supply & Delivery",
-      description: "Complete paint supply with free delivery in Chitwan",
+      title: 'Paint Supply & Delivery',
+      description: 'Complete paint supply with free delivery in Chitwan',
       features: [
-        "Genuine Asian Paints products",
-        "Free delivery above ₹5000",
-        "Bulk order discounts",
-        "Expert product guidance"
+        'Genuine Asian Paints products',
+        'Free delivery above ₹5000',
+        'Bulk order discounts',
+        'Expert product guidance',
       ],
-      price: "Free Delivery",
-      duration: "Same day"
     },
     {
-      icon: <Users size={32} />,
-      title: "Color Consultation",
-      description: "Professional color consultation for your space",
+      icon: <ShieldCheck size={32} />,
+      title: 'Quality Assurance',
+      description: 'Guaranteed quality with warranty and support',
       features: [
-        "Personalized color schemes",
-        "Sample testing and approval",
-        "Lighting consideration",
-        "Trend and style guidance"
+        'Upto 15-year warranty on paints',
+        'Quality inspection',
+        'Post-service support',
+        'Satisfaction guarantee',
       ],
-      price: "₹500",
-      duration: "1-2 hours"
     },
-    {
-      icon: <Shield size={32} />,
-      title: "Quality Assurance",
-      description: "Guaranteed quality with warranty and support",
-      features: [
-        "5-year warranty on paints",
-        "Quality inspection",
-        "Post-service support",
-        "Satisfaction guarantee"
-      ],
-      price: "Included",
-      duration: "Ongoing"
-    },
-    {
-      icon: <Clock size={32} />,
-      title: "Emergency Services",
-      description: "Quick response for urgent painting needs",
-      features: [
-        "24/7 emergency contact",
-        "Quick assessment",
-        "Priority scheduling",
-        "Rapid completion"
-      ],
-      price: "₹25/sq ft",
-      duration: "1-2 days"
-    }
   ];
 
   const testimonials = [
@@ -129,6 +117,7 @@ const Services = () => {
   };
 
   return (
+    <>
     <div className="services-page">
       <div className="container">
         {/* Header */}
@@ -171,56 +160,49 @@ const Services = () => {
                 ))}
               </div>
 
-              <div className="service-meta">
-                <div className="meta-item">
-                  <span className="meta-label">Price:</span>
-                  <span className="meta-value">{service.price}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Duration:</span>
-                  <span className="meta-value">{service.duration}</span>
-                </div>
-              </div>
-
-              <button className="service-btn">
-                Get Quote
-              </button>
             </motion.div>
           ))}
         </div>
 
-        {/* Why Choose Us */}
-        <section className="why-choose-us section">
-          <div className="container">
-            <h2 className="section-title">Why Choose Our Services?</h2>
-            <div className="reasons-grid">
-              <div className="reason-item">
-                <div className="reason-icon">
-                  <Shield size={24} />
+        {/* Awards & Recognition */}
+        </div>
+      </div>
+      <section className="awards section">
+        <div className="container">
+            <h2 className="section-title">Awards & Recognition</h2>
+            <p className="section-subtitle">Proud moments that reflect our commitment to quality, service, and trust</p>
+            <div className="awards-grid">
+              <div className="award-card card">
+                <div className="award-image-wrap">
+                  <img src="/images/award-1.jpg" alt="Award" className="award-image" />
                 </div>
-                <h3>Quality Guaranteed</h3>
-                <p>100% genuine Asian Paints with warranty and quality assurance</p>
+                <h3>Top Dealer Award</h3>
+                <p>Recognized for exceptional performance and customer satisfaction in the region</p>
+                <span className="award-year">2023</span>
               </div>
-              <div className="reason-item">
-                <div className="reason-icon">
-                  <Users size={24} />
+              <div className="award-card card">
+                <div className="award-image-wrap">
+                  <img src="/images/award-1.jpg" alt="Award" className="award-image" />
                 </div>
-                <h3>Expert Team</h3>
-                <p>Professional painters with years of experience and training</p>
+                <h3>Excellence in Service</h3>
+                <p>Honored for delivering consistent and reliable service across all projects</p>
+                <span className="award-year">2022</span>
               </div>
-              <div className="reason-item">
-                <div className="reason-icon">
-                  <Clock size={24} />
+              <div className="award-card card">
+                <div className="award-image-wrap">
+                  <img src="/images/award-1.jpg" alt="Award" className="award-image" />
                 </div>
-                <h3>Timely Delivery</h3>
-                <p>On-time completion with minimal disruption to your routine</p>
+                <h3>Customer Choice</h3>
+                <p>Voted as the most trusted hardware and paints partner by our customers</p>
+                <span className="award-year">2021</span>
               </div>
-              <div className="reason-item">
-                <div className="reason-icon">
-                  <Truck size={24} />
+              <div className="award-card card">
+                <div className="award-image-wrap">
+                  <img src="/images/award-1.jpg" alt="Award" className="award-image" />
                 </div>
-                <h3>Free Delivery</h3>
-                <p>Free delivery within Chitwan for orders above ₹5000</p>
+                <h3>Quality Leadership</h3>
+                <p>Awarded for maintaining the highest standards in products and execution</p>
+                <span className="award-year">2020</span>
               </div>
             </div>
           </div>
@@ -255,40 +237,39 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="services-cta section">
-          <div className="container">
-            <div className="cta-content">
-              <motion.div
-                className="cta-text"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2>Ready to Transform Your Space?</h2>
-                <p>
-                  Get in touch with us for a free consultation and quote. 
-                  Our expert team is ready to help you choose the perfect colors and services.
-                </p>
-                <div className="cta-contact">
-                  <div className="contact-item">
-                    <Phone size={20} />
-                    <span>+977-56-123456</span>
-                  </div>
-                  <div className="contact-item">
-                    <MapPin size={20} />
-                    <span>Chitwan, Nepal</span>
-                  </div>
-                </div>
-                <button className="btn btn-primary">
-                  Get Free Quote
-                </button>
-              </motion.div>
+    
+    <section className="services-cta section">
+      <div className="container">
+        <div className="cta-content">
+          <motion.div
+            className="cta-text"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2>Ready to Transform Your Space?</h2>
+            <p>
+              Get in touch with us for a free consultation and quote. 
+              Our expert team is ready to help you choose the perfect colors and services.
+            </p>
+            <div className="cta-contact">
+              <div className="contact-item">
+                <Phone size={20} />
+                <span>+977-9845156783</span>
+              </div>
+              <div className="contact-item">
+                <MapPin size={20} />
+                <span>Chitwan, Nepal</span>
+              </div>
             </div>
-          </div>
-        </section>
+            <button className="btn btn-primary">
+              Get Free Quote
+            </button>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </section>
+    </>
   );
 };
 

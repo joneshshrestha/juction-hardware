@@ -54,20 +54,30 @@ const Footer = () => {
               </div>
             </div>
             <p className="footer-description">
-              Your trusted partner for premium Asian Paints in Chitwan, Nepal. 
-              Quality products, expert consultation, and professional services.
+              Your trusted partner for premium Asian Paints in Chitwan, Nepal. Quality products,
+              expert consultation, and professional services.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="https://www.facebook.com/juctionhardware" className="social-link" target="_blank">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a href="https://www.instagram.com/juctionhardware" className="social-link" target="_blank">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="social-link" aria-label="TikTok">
+              <a
+                href="https://www.tiktok.com/@juctionhardware"
+                className="social-link"
+                target="_blank"
+                aria-label="TikTok"
+              >
                 <TikTokIcon size={20} />
               </a>
-              <a href="#" className="social-link" aria-label="Google">
+              <a
+                href="https://maps.app.goo.gl/PxpxTQo1X1vV7z1m8"
+                className="social-link"
+                target="_blank"
+                aria-label="Google"
+              >
                 <GoogleIcon size={20} />
               </a>
             </div>
@@ -77,11 +87,21 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Quick Links</h3>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/products">Products</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/products">Products</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
 
@@ -103,7 +123,9 @@ const Footer = () => {
             <ul className="contact-list">
               <li className="contact-item">
                 <MapPin size={31} />
-                <span className="contact-text">Main Road, Narayangarh, Bharatpur, Chitwan, Nepal</span>
+                <span className="contact-text">
+                  Main Road, Narayangarh, Bharatpur, Chitwan, Nepal
+                </span>
               </li>
               <li className="contact-item">
                 <Phone size={16} />
@@ -115,7 +137,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <Clock size={16} />
-                <span className="contact-text">Sun-Sat: 8AM-7PM</span>
+                <span className="contact-text">Tue-Sun: 8AM-7PM</span>
               </li>
             </ul>
           </div>
