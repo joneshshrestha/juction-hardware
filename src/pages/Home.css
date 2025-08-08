@@ -108,17 +108,19 @@
 .cta-buttons .btn { background: var(--white); color: var(--primary-color); border-color: var(--white); }
 .cta-buttons .btn:hover { background: transparent; color: var(--white); border-color: var(--white); }
 
-.product-promo-slide { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-hover); }
-.product-promo-bg { width: 100%; height: 420px; object-fit: cover; display: block; }
-
-/* CTA overlay bottom-left */
-.product-promo-cta {
-  position: absolute;
-  right: 300px;
-  bottom: 70px;
-  z-index: 2;
-  box-shadow: var(--shadow-hover);
+.product-promo-slide { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-hover); background: var(--white); }
+/* Fit entire image inside without cropping */
+.product-promo-bg {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
+
+/* CTA overlay */
+.product-promo-cta { position: absolute; right: 200px; bottom: 43px; z-index: 2; box-shadow: var(--shadow-hover); }
 
 /* Remove overlay and text for image-only banners */
 .product-promo-overlay, .product-promo-content, .product-promo-text { display: none !important; }
@@ -127,9 +129,15 @@
   border-radius: 999px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 /* Responsive */
+@media (max-width: 1280px) { .product-promo-bg { max-height: 460px; } }
+@media (max-width: 1024px) { .product-promo-bg { max-height: 380px; } }
+@media (max-width: 768px) { .product-promo-bg { max-height: 320px; } .product-promo-cta { right: 16px; bottom: 16px; } }
+
 @media (max-width: 1024px) {
   .banner-content { padding: 72px 40px; grid-template-columns: 1fr; gap: 24px; text-align: left; }
   .banner-text h1 { font-size: 2rem; }

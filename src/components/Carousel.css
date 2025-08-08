@@ -26,6 +26,15 @@
   z-index: 10;
 }
 
+/* Position nav at top-right for featured products section only */
+.products-preview .carousel-navigation {
+  top: 12px;
+  right: 16px;
+  left: auto;
+  bottom: auto;
+  transform: none;
+}
+
 .navigation-container {
   background: var(--white);
   border-radius: 22px;
@@ -35,6 +44,10 @@
   gap: 10px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.products-preview .navigation-container {
+  background: rgba(255,255,255,0.9);
 }
 
 /* Navigation Arrows */
@@ -93,6 +106,8 @@
   .nav-arrow { width: 20px; height: 20px; }
   .nav-dot { width: 6px; height: 6px; }
   .nav-dot.active { width: 18px; }
+
+  .products-preview .carousel-navigation { top: 8px; right: 10px; }
 }
 
 @media (max-width: 480px) {
@@ -102,4 +117,6 @@
   .nav-arrow svg { width: 12px; height: 12px; }
   .nav-dot { width: 5px; height: 5px; }
   .nav-dot.active { width: 14px; }
+
+  .products-preview .carousel-navigation { top: 6px; right: 8px; }
 } 
