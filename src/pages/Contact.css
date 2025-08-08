@@ -18,7 +18,7 @@
 
 /* Contact Info Section */
 .contact-info-section h2,
-.contact-form-section h2 {
+.contact-form-wrapper h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 30px;
@@ -83,6 +83,12 @@
   padding: 40px;
   border-radius: 12px;
   box-shadow: var(--shadow);
+}
+
+/* Wrapper to position the heading outside the card */
+.contact-form-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form {
@@ -238,6 +244,10 @@
 
   .contact-form-section {
     padding: 30px;
+  }
+
+  .contact-form-wrapper h2 {
+    margin-bottom: 20px;
   }
 
   .form-row {

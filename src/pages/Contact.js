@@ -114,102 +114,104 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div
-            className="contact-form-section"
+            className="contact-form-wrapper"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2>Send Us a Message</h2>
-            {isSubmitted ? (
-              <motion.div
-                className="success-message"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <CheckCircle size={48} />
-                <h3>Message Sent Successfully!</h3>
-                <p>Thank you for contacting us. We'll get back to you soon.</p>
-              </motion.div>
-            ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-row">
+            <div className="contact-form-section">
+              {isSubmitted ? (
+                <motion.div
+                  className="success-message"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <CheckCircle size={48} />
+                  <h3>Message Sent Successfully!</h3>
+                  <p>Thank you for contacting us. We'll get back to you soon.</p>
+                </motion.div>
+              ) : (
+                <form className="contact-form" onSubmit={handleSubmit}>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name">Full Name *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="Enter your email address"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone Number *</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="subject">Subject *</label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Select a subject</option>
+                        <option value="product-inquiry">Product Inquiry</option>
+                        <option value="quote-request">Quote Request</option>
+                        <option value="painting-service">Site Visit</option>
+                        <option value="color-consultation">Color Consultation</option>
+                        <option value="general-inquiry">General Inquiry</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
+                    <label htmlFor="message">Message *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Enter your full name"
-                    />
+                      rows="6"
+                      placeholder="Tell us about your requirements..."
+                    ></textarea>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                </div>
 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number *</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="subject">Subject *</label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="product-inquiry">Product Inquiry</option>
-                      <option value="quote-request">Quote Request</option>
-                      <option value="painting-service">Site Visit</option>
-                      <option value="color-consultation">Color Consultation</option>
-                      <option value="general-inquiry">General Inquiry</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    placeholder="Tell us about your requirements..."
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="submit-btn">
-                  <Send size={16} />
-                  Send Message
-                </button>
-              </form>
-            )}
+                  <button type="submit" className="submit-btn">
+                    <Send size={16} />
+                    Send Message
+                  </button>
+                </form>
+              )}
+            </div>
           </motion.div>
         </div>
 

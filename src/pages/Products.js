@@ -11,9 +11,9 @@ const Products = () => {
     { id: 'all', name: 'All Products' },
     { id: 'interior', name: 'Interior Paints' },
     { id: 'exterior', name: 'Exterior Paints' },
-    { id: 'premium', name: 'Premium Paints' },
-    { id: 'texture', name: 'Texture Paints' },
-    { id: 'primers', name: 'Primers & Sealers' }
+    { id: 'metal', name: 'Metal Paints' },
+    { id: 'wood', name: 'Wood Paints' },
+    { id: 'waterproof', name: 'Waterproofing' }
   ];
 
   const products = [
@@ -46,7 +46,7 @@ const Products = () => {
     {
       id: 3,
       name: "Asian Paints Royale",
-      category: "premium",
+      category: "metal",
       description: "Premium interior paint with luxurious finish and superior washability",
       price: "₹4,500",
       originalPrice: "₹5,200",
@@ -72,7 +72,7 @@ const Products = () => {
     {
       id: 5,
       name: "Asian Paints Texture",
-      category: "texture",
+      category: "wood",
       description: "Decorative texture paint for creating unique wall finishes",
       price: "₹3,800",
       originalPrice: "₹4,500",
@@ -85,7 +85,7 @@ const Products = () => {
     {
       id: 6,
       name: "Asian Paints Primer",
-      category: "primers",
+      category: "waterproof",
       description: "High-quality primer for better paint adhesion and surface preparation",
       price: "₹1,800",
       originalPrice: "₹2,200",

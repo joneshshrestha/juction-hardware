@@ -30,6 +30,7 @@
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Prevent overflow from padding + border */
 }
 
 .search-box input:focus {
@@ -43,6 +44,19 @@
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-light);
+}
+
+/* Ensure the filters container doesn't cause horizontal overflow */
+.products-filters {
+  overflow: hidden;
+}
+
+/* On very small screens keep the input within the viewport */
+@media (max-width: 360px) {
+  .search-box input {
+    font-size: 14px;
+    padding: 12px 16px 12px 44px;
+  }
 }
 
 .category-filters {
