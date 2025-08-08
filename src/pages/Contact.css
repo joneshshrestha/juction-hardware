@@ -30,16 +30,11 @@
   gap: 20px;
 }
 
-.contact-info-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
+.contact-info-card { background: white; padding: 25px; border-radius: 12px; box-shadow: var(--shadow); transition: all 0.3s ease; display: grid; grid-template-columns: 40px 1fr; align-items: start; column-gap: 16px; }
+.info-icon { color: var(--primary-color); display: flex; align-items: center; justify-content: center; align-self: start; margin-top: 4px; }
+.info-content { display: flex; flex-direction: column; }
+.info-content h3 { font-size: 1.2rem; font-weight: 600; margin: 0 0 8px 0; color: var(--text-dark); line-height: 1.2; }
+.info-content p { color: var(--text-light); line-height: 1.8; margin-bottom: 15px; white-space: pre-line; }
 
 .contact-info-card:hover {
   transform: translateY(-3px);
@@ -184,12 +179,10 @@
 }
 
 /* Map Section */
-.map-section {
-  background: white;
-  margin-bottom: 80px;
-}
+.map-section { background: transparent; margin-bottom: 50px; }
 
 .map-container {
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
