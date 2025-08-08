@@ -134,43 +134,19 @@ const Home = () => {
     </div>
   ];
 
-  // Featured products promotional slides (banner-style)
+  // Featured products promotional slides (image-only)
   const featuredSlides = [
     <div key="fp1" className="product-promo-slide">
-      <img className="product-promo-bg" src="/images/featured-1.jpg" alt="Royale Glitz" />
-      <div className="product-promo-overlay" />
-      <div className="product-promo-content">
-        <div className="product-promo-text">
-          <h3>Luxurious Finish</h3>
-          <h4>For Interior Walls</h4>
-          <p>Perfect crème finish with Teflon surface protector and 7-year warranty</p>
-          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
-        </div>
-      </div>
+      <img className="product-promo-bg" src="/images/featured-1.jpeg" alt="Featured Product 1" />
+      <Link to="/products" className="btn btn-primary btn-pill product-promo-cta">View All Products<ArrowRight size={16} /></Link>
     </div>,
     <div key="fp2" className="product-promo-slide">
-      <img className="product-promo-bg" src="/images/featured-2.jpg" alt="Exterior Protection" />
-      <div className="product-promo-overlay" />
-      <div className="product-promo-content">
-        <div className="product-promo-text">
-          <h3>Weather Proof Protection</h3>
-          <h4>Durable Exterior Coats</h4>
-          <p>Superior resistance to harsh weather and UV exposure</p>
-          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
-        </div>
-      </div>
+      <img className="product-promo-bg" src="/images/featured-2.jpeg" alt="Featured Product 2" />
+      <Link to="/products" className="btn btn-primary btn-pill product-promo-cta">View All Products<ArrowRight size={16} /></Link>
     </div>,
     <div key="fp3" className="product-promo-slide">
-      <img className="product-promo-bg" src="/images/featured-3.jpg" alt="Royal Shades" />
-      <div className="product-promo-overlay" />
-      <div className="product-promo-content">
-        <div className="product-promo-text">
-          <h3>Premium Color Collection</h3>
-          <h4>Make Every Room Stand Out</h4>
-          <p>Rich palettes curated for modern homes and classic spaces</p>
-          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
-        </div>
-      </div>
+      <img className="product-promo-bg" src="/images/featured-3.jpeg" alt="Featured Product 3" />
+      <Link to="/products" className="btn btn-primary btn-pill product-promo-cta">View All Products<ArrowRight size={16} /></Link>
     </div>
   ];
 

@@ -108,56 +108,20 @@
 .cta-buttons .btn { background: var(--white); color: var(--primary-color); border-color: var(--white); }
 .cta-buttons .btn:hover { background: transparent; color: var(--white); border-color: var(--white); }
 
-.product-promo-slide {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
+.product-promo-slide { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-hover); }
+.product-promo-bg { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+/* CTA overlay bottom-left */
+.product-promo-cta {
+  position: absolute;
+  right: 300px;
+  bottom: 70px;
+  z-index: 2;
   box-shadow: var(--shadow-hover);
 }
 
-.product-promo-bg {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-.product-promo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.05) 100%);
-}
-
-.product-promo-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  padding: 40px 56px;
-}
-
-.product-promo-text {
-  max-width: 560px;
-  color: var(--white);
-}
-
-.product-promo-text h3 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin: 0 0 10px 0;
-}
-
-.product-promo-text h4 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin: 0 0 16px 0;
-}
-
-.product-promo-text p {
-  opacity: 0.9;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
+/* Remove overlay and text for image-only banners */
+.product-promo-overlay, .product-promo-content, .product-promo-text { display: none !important; }
 
 .btn-pill {
   border-radius: 999px;
@@ -183,4 +147,6 @@
   .product-promo-text { max-width: none; }
   .product-promo-text h3 { font-size: 1.75rem; }
   .product-promo-text h4 { font-size: 1.25rem; }
+  .product-promo-bg { height: 300px; }
+  .product-promo-cta { right: 16px; bottom: 16px; }
 } 
