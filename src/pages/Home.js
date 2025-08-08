@@ -10,17 +10,51 @@ import {
   ArrowRight,
   Phone,
   MapPin,
-  Clock
+  Clock,
+  ShieldQuestion,
+  ShieldCheck,
+  SwatchBook,
+  SlidersHorizontal,
+  PaintRoller
 } from 'lucide-react';
 import Carousel from '../components/Carousel';
 import './Home.css';
 
 const Home = () => {
   const features = [
-    { icon: <Paintbrush size={32} />, title: "Premium Paints", description: "Complete range of Asian Paints including interior, exterior, and specialty paints" },
-    { icon: <Shield size={32} />, title: "Quality Assured", description: "100% genuine Asian Paints products with warranty and quality guarantee" },
-    { icon: <Truck size={32} />, title: "Free Delivery", description: "Free delivery within Chitwan district for orders above Rs. 5000" },
-    { icon: <Users size={32} />, title: "Expert Support", description: "Professional painting consultation and color selection assistance" }
+    {
+      icon: <Paintbrush size={32} />,
+      title: 'Premium Paints',
+      description:
+        'Complete range of Asian Paints including interior, exterior, and specialty paints',
+    },
+    {
+      icon: <ShieldCheck size={32} />,
+      title: 'Quality Assured',
+      description:
+        'Asian Paints products with quality guarantee and upto 15 years warranty',
+    },
+    {
+      icon: <Truck size={32} />,
+      title: 'Free Delivery',
+      description: 'Free delivery within Chitwan district for orders above Rs. 50000',
+    },
+    {
+      icon: <SwatchBook size={32} />,
+      title: 'Expert Color Consultation',
+      description:
+        'Use our Color Visualizer and professional painting consultation for color selection',
+    },
+    {
+      icon: <SlidersHorizontal size={32} />,
+      title: 'Fully Automated Color Mixing',
+      description: 'Advanced computerized mixing for precise and accurate color every time',
+    },
+    {
+      icon: <PaintRoller size={32} />,
+      title: 'Complete Painting Solutions',
+      description: 'Your one-stop-shop for all painting tools, from quality brushes to primers',
+    },
   ];
 
   const products = [
@@ -100,19 +134,45 @@ const Home = () => {
     </div>
   ];
 
-  const productSlides = products.map((product, index) => (
-    <div key={index} className="product-slide">
-      <div className="product-slide-image">
-        <img src={product.image} alt={product.name} />
-        <div className="product-slide-overlay">
-          <div className="product-slide-info">
-            <h3>{product.name}</h3>
-            <p className="product-slide-price">{product.price}</p>
-          </div>
+  // Featured products promotional slides (banner-style)
+  const featuredSlides = [
+    <div key="fp1" className="product-promo-slide">
+      <img className="product-promo-bg" src="/images/featured-1.jpg" alt="Royale Glitz" />
+      <div className="product-promo-overlay" />
+      <div className="product-promo-content">
+        <div className="product-promo-text">
+          <h3>Luxurious Finish</h3>
+          <h4>For Interior Walls</h4>
+          <p>Perfect crème finish with Teflon surface protector and 7-year warranty</p>
+          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
+        </div>
+      </div>
+    </div>,
+    <div key="fp2" className="product-promo-slide">
+      <img className="product-promo-bg" src="/images/featured-2.jpg" alt="Exterior Protection" />
+      <div className="product-promo-overlay" />
+      <div className="product-promo-content">
+        <div className="product-promo-text">
+          <h3>Weather Proof Protection</h3>
+          <h4>Durable Exterior Coats</h4>
+          <p>Superior resistance to harsh weather and UV exposure</p>
+          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
+        </div>
+      </div>
+    </div>,
+    <div key="fp3" className="product-promo-slide">
+      <img className="product-promo-bg" src="/images/featured-3.jpg" alt="Royal Shades" />
+      <div className="product-promo-overlay" />
+      <div className="product-promo-content">
+        <div className="product-promo-text">
+          <h3>Premium Color Collection</h3>
+          <h4>Make Every Room Stand Out</h4>
+          <p>Rich palettes curated for modern homes and classic spaces</p>
+          <Link to="/products" className="btn btn-primary btn-pill">Product details<ArrowRight size={16} /></Link>
         </div>
       </div>
     </div>
-  ));
+  ];
 
   return (
     <div className="home">
@@ -124,7 +184,6 @@ const Home = () => {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Why Choose Juction Hardware?</h2>
-            <p className="section-subtitle">We are your trusted partner for all painting needs in Chitwan</p>
           </div>
           <div className="features-grid">
             {features.map((feature, index) => (
@@ -145,7 +204,7 @@ const Home = () => {
             <p className="section-subtitle">Explore our premium collection of Asian Paints</p>
           </div>
           <div className="products-carousel">
-            <Carousel items={productSlides} autoPlay={true} interval={4000} showDots={true} showArrows={true} />
+            <Carousel items={featuredSlides} autoPlay={true} interval={7000} showDots={true} showArrows={true} />
           </div>
           <div className="view-all-btn">
             <Link to="/products" className="btn btn-secondary">View All Products</Link>

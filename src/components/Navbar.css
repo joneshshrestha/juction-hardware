@@ -107,22 +107,26 @@
   background: var(--primary-color);
   color: var(--white);
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border: 2px solid var(--primary-color);
   line-height: 1;
 }
 
 .contact-btn svg { display: block; }
 
+/* Keep text visible and grow radius + padding on hover */
 .contact-btn:hover {
   background: var(--primary-light);
+  color: var(--white);
   border-color: var(--primary-light);
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
+  border-radius: 999px;
+  padding: 12px 24px;
 }
 
 /* Mobile */
