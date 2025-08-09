@@ -254,7 +254,7 @@ const Products = () => {
       name: 'ULTIMA PROTEK SHYNE',
       category: 'exterior',
       description:
-        "Exterior Super Luxury Paint that comes with 10 years' of performance warranty. It's UV hybrid technology ensures that your house stays protected and beautiful.",
+        "Exterior Super Luxury Paint that comes with 10 years of performance warranty. It's UV hybrid technology ensures that your house stays protected and beautiful.",
       image: '',
       features: ['10 years warranty', 'Uv hybrid technology', 'Ultra luxury sheen'],
       inStock: true,
@@ -427,7 +427,7 @@ const Products = () => {
       name: 'SILICON SHIELD SHYNE',
       category: 'waterproof',
       description:
-        'Silicon Shield Shyne is one component ,ready-to-use silicon based clear coat for brick and stone substrates that provides sheen look and protects substrate from',
+        'Silicon Shield Shyne is one component, ready-to-use silicon based clear coat for brick and stone substrates that provides sheen look and protects substrate from',
       image: '',
       features: ['Silicon based clear coat', 'High sheen', 'Protection against efflorescence'],
       inStock: true,
