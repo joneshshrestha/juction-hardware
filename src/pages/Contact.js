@@ -88,32 +88,32 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin size={24} />,
-      title: "Visit Us",
-      details: "Main Road, Narayangarh, Bharatpur, Chitwan, Nepal",
-      action: "Get Directions",
-      onClick: handleGetDirections
+      title: 'Visit Us',
+      details: 'Main Road, Narayangarh, Bharatpur, Chitwan, Nepal',
+      action: 'Get Directions',
+      onClick: handleGetDirections,
     },
     {
       icon: <Phone size={24} />,
-      title: "Call Us",
-      details: "+977-9845156783\n+977-9811311320",
-      action: "Call Now",
-      onClick: handleCallNow
+      title: 'Call Us',
+      details: '+977-9845156783\n+977-9811311320',
+      action: 'Call Now',
+      onClick: handleCallNow,
     },
     {
       icon: <Mail size={24} />,
-      title: "Email Us",
-      details: "bhimshrestha3669@gmail.com\ncontact@juctionhardware.com.np",
-      action: "Send Email",
-      onClick: handleSendEmail
+      title: 'Email Us',
+      details: 'contact@juctionhardware.com.np\nsales@juctionhardware.com.np',
+      action: 'Send Email',
+      onClick: handleSendEmail,
     },
     {
       icon: <Clock size={24} />,
-      title: "Business Hours",
-      details: "Tuesday - Sunday\n8:00 AM - 7:00 PM",
-      action: "Monday Closed",
-      onClick: null
-    }
+      title: 'Business Hours',
+      details: 'Tuesday - Sunday\n8:00 AM - 7:00 PM',
+      action: 'Monday Closed',
+      onClick: null,
+    },
   ];
 
   return (

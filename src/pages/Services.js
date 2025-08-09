@@ -67,7 +67,7 @@ const Services = () => {
       description: 'Complete paint supply with free delivery in Chitwan',
       features: [
         'Genuine Asian Paints products',
-        'Free delivery above ₹5000',
+        'Free delivery above Rs. 50000',
         'Bulk order discounts',
         'Expert product guidance',
       ],

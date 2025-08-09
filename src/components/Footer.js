@@ -58,10 +58,18 @@ const Footer = () => {
               expert consultation, and professional services.
             </p>
             <div className="social-links">
-              <a href="https://www.facebook.com/juctionhardware" className="social-link" target="_blank">
+              <a
+                href="https://www.facebook.com/juctionhardware"
+                className="social-link"
+                target="_blank"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/juctionhardware" className="social-link" target="_blank">
+              <a
+                href="https://www.instagram.com/juctionhardware"
+                className="social-link"
+                target="_blank"
+              >
                 <Instagram size={20} />
               </a>
               <a
@@ -133,7 +141,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <span className="contact-text contact-email">bhimshrestha3669@gmail.com</span>
+                <span className="contact-text contact-email">contact@juctionhardware.com.np</span>
               </li>
               <li className="contact-item">
                 <Clock size={16} />

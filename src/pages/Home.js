@@ -224,7 +224,7 @@ const Home = () => {
               <div className="cta-info">
                 <div className="cta-item"><Phone size={20} /><span>+977-9845156783</span></div>
                 <div className="cta-item"><MapPin size={20} /><span>Chitwan, Nepal</span></div>
-                <div className="cta-item"><Clock size={20} /><span>Sun-Sat: 9AM-7PM</span></div>
+                <div className="cta-item"><Clock size={20} /><span>Sun-Sat: 8AM-7PM</span></div>
               </div>
               <Link to="/contact" className="btn btn-primary">Contact Us Today</Link>
             </motion.div>
