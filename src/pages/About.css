@@ -1,5 +1,5 @@
 .about-page {
-  padding: 120px 0 80px;
+  padding: 120px 0 0;
   background: var(--background-light);
   min-height: 100vh;
 }
@@ -220,6 +220,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  padding: 60px 0; /* balanced spacing above and below the cards */
 }
 
 .contact-grid {
@@ -261,7 +262,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-page {
-    padding: 100px 0 60px;
+    padding: 100px 0 0;
   }
 
   .hero-content {

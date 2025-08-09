@@ -147,6 +147,9 @@
 }
 
 @media (max-width: 768px) {
+  /* Reduce bottom spacing under the CTA on mobile so it sits closer to footer */
+  .contact-cta.section { padding-bottom: 32px; }
+
   .banner-content { padding: 56px 24px; }
   .banner-text h1 { font-size: 1.75rem; }
   .banner-text h2 { font-size: 1.1rem; }

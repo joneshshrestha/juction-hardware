@@ -15,8 +15,8 @@ import './About.css';
 const About = () => {
   const stats = [
     { number: "26+", label: "Years Experience" },
-    { number: "5000+", label: "Happy Customers" },
-    { number: "1000+", label: "Home Transformed" },
+    { number: "9000+", label: "Happy Customers" },
+    { number: "2500+", label: "Home Transformed" },
     { number: "100%", label: "Quality Guarantee" }
   ];
 
@@ -197,7 +197,6 @@ const About = () => {
                   <div className="member-info">
                     <h3>{member.name}</h3>
                     <p className="position">{member.position}</p>
-                    <p className="experience">{member.experience} experience</p>
                   </div>
                 </motion.div>
               ))}
