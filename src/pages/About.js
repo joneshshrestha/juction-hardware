@@ -59,6 +59,12 @@ const About = () => {
       experience: '5+ years',
       image: '/images/sabitri-shrestha.jpg',
     },
+    {
+      name: 'Nabin Shrestha',
+      position: 'Sales Associate',
+      experience: '2+ years',
+      image: '/images/nabin-shrestha.png',
+    },
   ];
 
   return (
