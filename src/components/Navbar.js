@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-contact">
-          <a href="tel:+977-56-123456" className="contact-btn">
+          <a href="tel:+977-9845156783" className="contact-btn">
             <Phone size={16} />
             <span>Call Now</span>
           </a>

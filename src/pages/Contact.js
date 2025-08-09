@@ -96,7 +96,7 @@ const Contact = () => {
     {
       icon: <Phone size={24} />,
       title: 'Call Us',
-      details: '+977-9845156783\n+977-9811311320',
+      details: '+977-9845156783\n+977-9702739906\n+977-9811311320',
       action: 'Call Now',
       onClick: handleCallNow,
     },

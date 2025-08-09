@@ -82,10 +82,10 @@ const About = () => {
               <h1>About Us</h1>
               <h2>Your Trusted Asian Paints Dealer in Chitwan</h2>
               <p>
-                For over 15 years, Juction Hardware has been the leading Asian Paints dealer 
-                in Chitwan, Nepal. We've built our reputation on quality, reliability, best prices and 
-                exceptional customer service. Our commitment to excellence has made us the 
-                preferred choice for homeowners, contractors, and businesses throughout the region.
+                For over 15 years, Juction Hardware has been the leading Asian Paints dealer in
+                Chitwan, Nepal. We've built our reputation on quality, reliability, best prices and
+                exceptional customer service. Our commitment to excellence has made us the preferred
+                choice for homeowners, contractors, and businesses throughout the region.
               </p>
             </motion.div>
             <motion.div
@@ -94,10 +94,7 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img 
-                src="/images/about-1.jpg" 
-                alt="Juction Hardware Store"
-              />
+              <img src="/images/about-1.jpg" alt="Juction Hardware Store" />
             </motion.div>
           </div>
         </section>
@@ -131,21 +128,21 @@ const About = () => {
             >
               <h2>Our Story</h2>
               <p>
-                Founded in 1998, Juction Hardware started as a small family business with a 
-                simple mission: to provide the highest quality home improvement products and 
-                exceptional service to the people of Chitwan. What began as a modest hardware store 
-                has grown into the region's most trusted Asian Paints dealer.
+                Founded in 1998, Juction Hardware started as a small family business with a simple
+                mission: to provide the highest quality home improvement products and exceptional
+                service to the people of Chitwan. What began as a modest hardware store has grown
+                into the region's most trusted Asian Paints dealer.
               </p>
               <p>
-                Over the years, we've focused and expanded our services to include professional painting 
-                consultation, color selection assistance, and complete painting solutions. 
-                Our team of experienced professionals is dedicated to helping you transform 
-                your space with the perfect colors and finishes.
+                Over the years, we've focused and expanded our services to include professional
+                painting consultation, color selection assistance, and complete painting solutions.
+                Our team of experienced professionals is dedicated to helping you transform your
+                space with the perfect colors and finishes.
               </p>
               <p>
-                Today, we're proud to serve thousands of satisfied customers across Chitwan, 
-                maintaining the same commitment to quality and service that we started with 
-                over decades ago.
+                Today, we're proud to serve thousands of satisfied customers across Chitwan,
+                maintaining the same commitment to quality and service that we started with over
+                decades ago.
               </p>
             </motion.div>
             <motion.div
@@ -154,10 +151,7 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <img 
-                src="/images/about-2.jpg" 
-                alt="Our Journey"
-              />
+              <img src="/images/about-2.jpg" alt="Our Journey" />
             </motion.div>
           </div>
         </section>
@@ -175,9 +169,7 @@ const About = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="value-icon">
-                    {value.icon}
-                  </div>
+                  <div className="value-icon">{value.icon}</div>
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>
                 </motion.div>
@@ -227,7 +219,11 @@ const About = () => {
                   <MapPin size={24} />
                 </div>
                 <h3>Visit Us</h3>
-                <p>Main Road, Narayangarh, Bharatpur<br />Chitwan, Nepal</p>
+                <p>
+                  Main Road, Narayangarh, Bharatpur
+                  <br />
+                  Chitwan, Nepal
+                </p>
               </motion.div>
 
               <motion.div
@@ -240,7 +236,13 @@ const About = () => {
                   <Phone size={24} />
                 </div>
                 <h3>Call Us</h3>
-                <p>+977-9845156783<br />+977-9811311320</p>
+                <p>
+                  +977-9845156783
+                  <br />
+                  +977-9702739906
+                  <br />
+                  +977-9811311320
+                </p>
               </motion.div>
 
               <motion.div
@@ -253,7 +255,11 @@ const About = () => {
                   <Clock size={24} />
                 </div>
                 <h3>Business Hours</h3>
-                <p>Tuesday - Sunday<br />8:00 AM - 7:00 PM</p>
+                <p>
+                  Tuesday - Sunday
+                  <br />
+                  8:00 AM - 7:00 PM
+                </p>
               </motion.div>
             </div>
           </div>
